@@ -30,27 +30,27 @@ export function Services() {
             src={bgImage.imageUrl}
             alt={bgImage.description}
             fill
-            className="object-cover opacity-10"
+            className="object-cover"
             data-ai-hint={bgImage.imageHint}
           />
-           <div className="absolute inset-0 bg-background/60" />
+           <div className="absolute inset-0 bg-black/80" />
         </div>
       )}
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 relative py-12 md:py-24 lg:py-32">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Un servicio para cada etapa de tu libertad</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">Un servicio para cada etapa de tu libertad</h2>
+          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mt-4">
             Nuestros servicios están diseñados para construir un ecosistema de marketing que te libere, no que te ate.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.title} className="flex flex-col text-center hover:shadow-xl transition-shadow duration-300 bg-card/80 backdrop-blur-sm">
+            <Card key={service.title} className="flex flex-col text-center hover:shadow-xl transition-shadow duration-300 bg-card/10 backdrop-blur-sm border border-white/10 text-primary-foreground">
               <CardHeader>
                 <CardTitle className="text-2xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <CardDescription>{service.description}</CardDescription>
+                <p className="text-primary-foreground/80">{service.description}</p>
               </CardContent>
               <div className="p-6 pt-0">
                 <Button variant="outline" asChild>

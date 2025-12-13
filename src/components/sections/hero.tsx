@@ -19,7 +19,7 @@ export function Hero() {
       )}
       <div className="absolute inset-0 bg-black/70 -z-10" />
 
-      <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center py-12 md:py-24 lg:py-32">
         <div className="text-primary-foreground space-y-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-black uppercase tracking-tighter">
             Marketing que piensa como vos.

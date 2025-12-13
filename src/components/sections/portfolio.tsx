@@ -34,16 +34,16 @@ export function Portfolio() {
             src={bgImage.imageUrl}
             alt={bgImage.description}
             fill
-            className="object-cover opacity-10"
+            className="object-cover"
             data-ai-hint={bgImage.imageHint}
           />
-           <div className="absolute inset-0 bg-background/70" />
+           <div className="absolute inset-0 bg-black/80" />
         </div>
       )}
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 relative py-12 md:py-24 lg:py-32">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Casos de Éxito</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">Casos de Éxito</h2>
+          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mt-4">
             No solo lo decimos, lo demostramos. Estos son algunos de los resultados que hemos generado.
           </p>
         </div>
@@ -51,7 +51,7 @@ export function Portfolio() {
           {portfolioItems.map((item) => {
             const image = PlaceHolderImages.find(p => p.id === item.id);
             return (
-              <Card key={item.title} className="overflow-hidden group bg-card/80 backdrop-blur-sm">
+              <Card key={item.title} className="overflow-hidden group bg-card/10 backdrop-blur-sm border border-white/10 text-primary-foreground">
                 {image && (
                   <div className="relative h-48">
                     <Image
@@ -68,7 +68,7 @@ export function Portfolio() {
                   <div className="flex flex-wrap gap-2 mb-4">
                     {item.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                   </div>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <p className="text-primary-foreground/80">{item.description}</p>
                 </CardContent>
               </Card>
             );
