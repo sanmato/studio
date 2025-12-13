@@ -25,14 +25,14 @@ export function Problem() {
   const bgImage = PlaceHolderImages.find(p => p.id === 'problem-bg');
 
   return (
-    <section id="nosotros" className="relative bg-card">
+    <section id="nosotros" className="relative bg-background">
        {bgImage && (
         <div className="absolute inset-0">
           <Image
             src={bgImage.imageUrl}
             alt={bgImage.description}
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-10"
             data-ai-hint={bgImage.imageHint}
           />
           <div className="absolute inset-0 bg-background/50" />

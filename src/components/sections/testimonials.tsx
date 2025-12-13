@@ -24,14 +24,14 @@ const testimonials = [
 export function Testimonials() {
   const bgImage = PlaceHolderImages.find(p => p.id === 'testimonials-bg');
   return (
-    <section className="relative bg-card">
+    <section className="relative bg-background">
        {bgImage && (
         <div className="absolute inset-0">
           <Image
             src={bgImage.imageUrl}
             alt={bgImage.description}
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-10"
             data-ai-hint={bgImage.imageHint}
           />
            <div className="absolute inset-0 bg-background/70" />

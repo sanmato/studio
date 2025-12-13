@@ -19,12 +19,12 @@ export function Hero() {
               data-ai-hint={heroImage.imageHint}
             />
           )}
-          <div className="absolute inset-0 bg-black/70 -z-10" />
+          <div className="absolute inset-0 bg-background/30 -z-10" />
           <div className="max-w-md space-y-4">
-             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-black uppercase tracking-tighter text-primary-foreground">
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-black uppercase tracking-tighter text-foreground">
               Marketing que piensa como vos.
             </h1>
-            <h2 className="text-lg md:text-xl font-light text-primary-foreground/80">
+            <h2 className="text-lg md:text-xl font-light text-foreground/80">
               Investigación real que convierte tu historia en clientes.
             </h2>
           </div>

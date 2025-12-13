@@ -23,14 +23,14 @@ export function Services() {
   const bgImage = PlaceHolderImages.find(p => p.id === 'services-bg');
 
   return (
-    <section id="servicios" className="relative bg-card">
+    <section id="servicios" className="relative bg-background">
        {bgImage && (
         <div className="absolute inset-0">
           <Image
             src={bgImage.imageUrl}
             alt={bgImage.description}
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-10"
             data-ai-hint={bgImage.imageHint}
           />
            <div className="absolute inset-0 bg-background/60" />

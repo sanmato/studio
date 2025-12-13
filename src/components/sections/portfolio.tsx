@@ -34,7 +34,7 @@ export function Portfolio() {
             src={bgImage.imageUrl}
             alt={bgImage.description}
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-10"
             data-ai-hint={bgImage.imageHint}
           />
            <div className="absolute inset-0 bg-background/70" />
