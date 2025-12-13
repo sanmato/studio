@@ -5,12 +5,10 @@ import { Button } from '@/components/ui/button';
 export function Footer() {
   return (
     <footer className="bg-card">
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
-          <p className="text-center text-sm text-muted-foreground order-2 md:order-1">
-            Hecho con pasión en Argentina 🇦🇷. © {new Date().getFullYear()} Strategia Libre.
-          </p>
-          <div className="flex flex-col items-center gap-4 order-1 md:flex-row md:gap-2">
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col items-center justify-center gap-6 text-center md:flex-row md:justify-between">
+          
+          <div className="flex flex-col items-center gap-4 md:order-2">
             <div className="flex items-center justify-center gap-2">
               <Button variant="ghost" size="icon" asChild>
                 <Link href="#" aria-label="Instagram">
@@ -32,6 +30,11 @@ export function Footer() {
               Agency Dashboard
             </Link>
           </div>
+
+          <p className="text-sm text-muted-foreground md:order-1">
+            Hecho con pasión en Argentina 🇦🇷. © {new Date().getFullYear()} Strategia Libre.
+          </p>
+
         </div>
       </div>
     </footer>
