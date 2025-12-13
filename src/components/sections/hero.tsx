@@ -19,7 +19,7 @@ export function Hero() {
               data-ai-hint={heroImage.imageHint}
             />
           )}
-          <div className="absolute inset-0 bg-black/70 -z-10" />
+          <div className="absolute inset-0 bg-black/90 -z-10" />
           <div className="max-w-md space-y-4">
              <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-black uppercase tracking-tighter">
               Marketing que piensa como vos.
