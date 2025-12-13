@@ -45,12 +45,12 @@ export function Services() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.title} className="flex flex-col text-center hover:shadow-xl transition-shadow duration-300 bg-card/10 backdrop-blur-sm border border-white/10 text-primary-foreground">
+            <Card key={service.title} className="flex flex-col text-center hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
                 <CardTitle className="text-2xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-primary-foreground/80">{service.description}</p>
+                <p className="text-muted-foreground">{service.description}</p>
               </CardContent>
               <div className="p-6 pt-0">
                 <Button variant="outline" asChild>
