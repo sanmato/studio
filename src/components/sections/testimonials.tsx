@@ -1,5 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Star } from 'lucide-react';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const testimonials = [
   {
@@ -20,9 +22,22 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const bgImage = PlaceHolderImages.find(p => p.id === 'testimonials-bg');
   return (
-    <section className="bg-card">
-      <div className="container mx-auto px-4">
+    <section className="relative bg-card">
+       {bgImage && (
+        <div className="absolute inset-0">
+          <Image
+            src={bgImage.imageUrl}
+            alt={bgImage.description}
+            fill
+            className="object-cover opacity-50"
+            data-ai-hint={bgImage.imageHint}
+          />
+           <div className="absolute inset-0 bg-background/70" />
+        </div>
+      )}
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">La libertad tiene sus testigos</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
@@ -31,7 +46,7 @@ export function Testimonials() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="flex flex-col justify-between">
+            <Card key={testimonial.name} className="flex flex-col justify-between bg-card/80 backdrop-blur-sm">
               <CardContent className="p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}

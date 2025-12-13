@@ -1,6 +1,8 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const services = [
   {
@@ -18,9 +20,23 @@ const services = [
 ];
 
 export function Services() {
+  const bgImage = PlaceHolderImages.find(p => p.id === 'services-bg');
+
   return (
-    <section id="servicios" className="bg-card">
-      <div className="container mx-auto px-4">
+    <section id="servicios" className="relative bg-card">
+       {bgImage && (
+        <div className="absolute inset-0">
+          <Image
+            src={bgImage.imageUrl}
+            alt={bgImage.description}
+            fill
+            className="object-cover opacity-40"
+            data-ai-hint={bgImage.imageHint}
+          />
+           <div className="absolute inset-0 bg-background/60" />
+        </div>
+      )}
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Un servicio para cada etapa de tu libertad</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
@@ -29,7 +45,7 @@ export function Services() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.title} className="flex flex-col text-center hover:shadow-xl transition-shadow duration-300">
+            <Card key={service.title} className="flex flex-col text-center hover:shadow-xl transition-shadow duration-300 bg-card/80 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-2xl">{service.title}</CardTitle>
               </CardHeader>

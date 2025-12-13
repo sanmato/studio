@@ -25,9 +25,22 @@ const portfolioItems = [
 ];
 
 export function Portfolio() {
+  const bgImage = PlaceHolderImages.find(p => p.id === 'portfolio-bg');
   return (
-    <section id="casos-de-exito" className="bg-background">
-      <div className="container mx-auto px-4">
+    <section id="casos-de-exito" className="relative bg-background">
+       {bgImage && (
+        <div className="absolute inset-0">
+          <Image
+            src={bgImage.imageUrl}
+            alt={bgImage.description}
+            fill
+            className="object-cover opacity-20"
+            data-ai-hint={bgImage.imageHint}
+          />
+           <div className="absolute inset-0 bg-background/70" />
+        </div>
+      )}
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Casos de Éxito</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
@@ -38,7 +51,7 @@ export function Portfolio() {
           {portfolioItems.map((item) => {
             const image = PlaceHolderImages.find(p => p.id === item.id);
             return (
-              <Card key={item.title} className="overflow-hidden group">
+              <Card key={item.title} className="overflow-hidden group bg-card/80 backdrop-blur-sm">
                 {image && (
                   <div className="relative h-48">
                     <Image

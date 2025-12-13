@@ -35,6 +35,30 @@
       "description": "Creative mind-mapping session with sticky notes on a glass wall.",
       "imageUrl": "https://images.unsplash.com/photo-1613666517563-d19a4585d1fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjcmVhdGl2ZSUyMHdvcmtzaG9wfGVufDB8fHx8MTc2NDk0OTIxMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "creative workshop"
+    },
+    {
+      "id": "problem-bg",
+      "description": "Abstract image representing confusion or problems.",
+      "imageUrl": "https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHRleHR1cmV8ZW58MHx8fHwxNzE2NDkxODg5fDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "white texture"
+    },
+    {
+      "id": "services-bg",
+      "description": "A light and clean background for services section.",
+      "imageUrl": "https://images.unsplash.com/photo-1533134486753-c833f0ed4866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsaWdodCUyMGFic3RyYWN0fGVufDB8fHx8MTcxNjQ5MjA2N3ww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "light abstract"
+    },
+    {
+      "id": "portfolio-bg",
+      "description": "A clean background for portfolio items.",
+      "imageUrl": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncmFkaWVudCUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzE2NDkyMTUxfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "gradient background"
+    },
+    {
+      "id": "testimonials-bg",
+      "description": "A background that inspires trust and positivity.",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723a9ce6890?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHNhbmR8ZW58MHx8fHwxNzE2NDkyMjMwfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "beach sand"
     }
   ]
 }
