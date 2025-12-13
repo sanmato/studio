@@ -24,9 +24,9 @@ const testimonials = [
 export function Testimonials() {
   const bgImage = PlaceHolderImages.find(p => p.id === 'testimonials-bg');
   return (
-    <section className="relative bg-background">
+    <section className="relative bg-background py-12 md:py-24 lg:py-32">
        {bgImage && (
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 opacity-20">
           <Image
             src={bgImage.imageUrl}
             alt={bgImage.description}
@@ -34,27 +34,26 @@ export function Testimonials() {
             className="object-cover"
             data-ai-hint={bgImage.imageHint}
           />
-           <div className="absolute inset-0 bg-black/80" />
         </div>
       )}
-      <div className="container mx-auto px-4 relative py-12 md:py-24 lg:py-32">
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">La libertad tiene sus testigos</h2>
-          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mt-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">La libertad tiene sus testigos</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
             Nuestros clientes no solo crecen, recuperan su tiempo y su pasión.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="flex flex-col justify-between bg-card/10 backdrop-blur-sm border border-white/10 text-primary-foreground">
+            <Card key={testimonial.name} className="flex flex-col justify-between bg-card">
               <CardContent className="p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
                 </div>
-                <blockquote className="text-primary-foreground/80 italic mb-4">"{testimonial.quote}"</blockquote>
+                <blockquote className="text-muted-foreground italic mb-4">"{testimonial.quote}"</blockquote>
                 <div>
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-sm text-primary-foreground/80">{testimonial.company}</p>
+                  <p className="font-bold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.company}</p>
                 </div>
               </CardContent>
             </Card>
