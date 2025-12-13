@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section id="inicio" className="w-full min-h-screen flex items-center bg-background p-0">
       <div className="container mx-auto grid lg:grid-cols-2 gap-8 items-center">
-        <div className="relative h-full min-h-[50vh] lg:min-h-screen flex flex-col justify-center text-primary-foreground p-8 lg:p-12">
+        <div className="relative h-full min-h-[50vh] lg:min-h-screen flex flex-col justify-center text-foreground p-8 lg:p-12">
            {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -19,7 +19,7 @@ export function Hero() {
               data-ai-hint={heroImage.imageHint}
             />
           )}
-          <div className="absolute inset-0 bg-black/90 -z-10" />
+          <div className="absolute inset-0 bg-white/70 -z-10" />
           <div className="max-w-md space-y-4">
              <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-black uppercase tracking-tighter">
               Marketing que piensa como vos.
