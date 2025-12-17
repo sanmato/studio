@@ -41,7 +41,7 @@ export function Header() {
         isScrolled ? 'bg-background/80 backdrop-blur-md shadow-md' : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/">
           <Logo />
         </Link>
@@ -72,7 +72,7 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <div className="flex flex-col gap-6 pt-10">
+              <div className="flex flex-col gap-6 p-6 pt-10">
                 <Logo />
                 {navLinks.map((link) => (
                   <Link
