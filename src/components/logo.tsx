@@ -9,7 +9,7 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
         alt="Napkin drawing background"
         width={80}
         height={80}
-        className="absolute inset-0 object-contain opacity-70"
+        className="absolute inset-0 object-contain opacity-50"
       />
       <span className="relative font-logo font-bold text-2xl tracking-tight" style={{ color: '#1C3F5E' }}>.merlo</span>
     </div>
