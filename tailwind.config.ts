@@ -19,6 +19,7 @@ export default {
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],
         headline: ['Montserrat', 'sans-serif'],
+        logo: ['Poppins', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

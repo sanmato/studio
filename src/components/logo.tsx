@@ -82,7 +82,7 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
           strokeLinejoin="round"
         />
       </svg>
-      <span className="font-bold text-xl tracking-tight text-foreground">.merlo</span>
+      <span className="font-logo font-bold text-xl tracking-tight" style={{ color: '#1C3F5E' }}>.merlo</span>
     </div>
   );
 }
