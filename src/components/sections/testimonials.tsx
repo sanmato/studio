@@ -5,7 +5,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const testimonials = [
   {
-    quote: "Strategia Libre transformó nuestra forma de ver el marketing. Ahora cada acción tiene un porqué y los resultados son tangibles.",
+    quote: ".merlo transformó nuestra forma de ver el marketing. Ahora cada acción tiene un porqué y los resultados son tangibles.",
     name: "Ana Pérez",
     company: "CEO, Tech Inova"
   },
@@ -24,9 +24,9 @@ const testimonials = [
 export function Testimonials() {
   const bgImage = PlaceHolderImages.find(p => p.id === 'testimonials-bg');
   return (
-    <section className="relative bg-background py-12 md:py-24 lg:py-32">
+    <section className="relative bg-background text-foreground py-12 md:py-24 lg:py-32">
        {bgImage && (
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0">
           <Image
             src={bgImage.imageUrl}
             alt={bgImage.description}
@@ -34,6 +34,7 @@ export function Testimonials() {
             className="object-cover"
             data-ai-hint={bgImage.imageHint}
           />
+           <div className="absolute inset-0 bg-background/80" />
         </div>
       )}
       <div className="container mx-auto px-4 relative">

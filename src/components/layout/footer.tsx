@@ -32,7 +32,7 @@ export function Footer() {
           </div>
 
           <p className="text-sm text-muted-foreground md:order-1">
-            Hecho con pasión en Argentina 🇦🇷. © {new Date().getFullYear()} Strategia Libre.
+            Hecho con pasión en Argentina 🇦🇷. © {new Date().getFullYear()} .merlo.
           </p>
 
         </div>

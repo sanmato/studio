@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'Strategia Libre | Marketing Estratégico y Consultoría de Marca en Argentina',
+  title: '.merlo | Marketing Estratégico y Consultoría de Marca en Argentina',
   description: 'Transformamos la historia de tu marca en un sistema de ventas escalable. Agencia de marketing especializada en investigación y estrategia. Agenda tu diagnóstico hoy.',
   keywords: ['Marketing estratégico', 'consultoría de negocios', 'branding argentina', 'libertad financiera', 'estrategia digital']
 };
