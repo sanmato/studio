@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export function Logo(props: SVGProps<SVGSVGElement>) {
   return (
-    <div className="relative flex items-center justify-center w-[80px] h-[80px] rounded-lg overflow-hidden" {...props}>
+    <div className="relative flex items-center justify-center w-[80px] h-[80px] rounded-full overflow-hidden" {...props}>
       <Image
         src="/napkin-bg.png"
         alt="Napkin drawing background"
