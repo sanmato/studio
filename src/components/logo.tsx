@@ -6,81 +6,20 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
       <svg
         width="28"
         height="28"
-        viewBox="0 0 24 24"
+        viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="text-accent"
+        stroke="hsl(var(--primary))"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        <path
-          d="M12 2L12 6"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M12 18V22"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M4.92999 4.92999L7.75999 7.75999"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M16.24 16.24L19.07 19.07"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M2 12H6"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M18 12H22"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M4.92999 19.07L7.75999 16.24"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M16.24 7.75999L19.07 4.92999"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M2 17C4.66667 15.6667 8.33333 15.6667 11 17C13.6667 18.3333 17.3333 18.3333 20 17"
-          stroke="hsl(var(--primary))"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M3 20C5.66667 18.6667 9.33333 18.6667 12 20C14.6667 21.3333 18.3333 21.3333 21 20"
-          stroke="hsl(var(--primary))"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M2,38 L2,10 L46,10 L46,38 L2,38 Z" stroke="hsl(var(--primary))" fill="none" />
+        <path d="M10 24 L24 24 L22 22 M24 24 L22 26" fill="none" />
+        <path d="M14,21 L14,27 L10,24 Z" fill="hsl(var(--primary))" stroke="none" />
+        <circle cx="32" cy="24" r="5" fill="none" />
+        <path d="M32,19 L32,29 M27,24 L37,24 M28.5 28.5 L35.5 20.5 M28.5 20.5 L35.5 28.5" fill="none" />
       </svg>
       <span className="font-logo font-bold text-xl tracking-tight" style={{ color: '#1C3F5E' }}>.merlo</span>
     </div>
