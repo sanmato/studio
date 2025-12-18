@@ -27,10 +27,13 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   }
   
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const toEmails = process.env.RESEND_TO_EMAIL?.split(',').map(email => email.trim());
+  const toEmails = process.env.RESEND_TO_EMAIL
+    ?.split(',')
+    .map(email => email.trim())
+    .filter(email => email); // Filtra cualquier valor vacío
 
   if (!toEmails || toEmails.length === 0) {
-    console.error('RESEND_TO_EMAIL is not configured in .env');
+    console.error('RESEND_TO_EMAIL is not configured in .env or is empty.');
     return {
       message: 'Ocurrió un error de configuración en el servidor.',
       success: false,
