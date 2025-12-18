@@ -38,7 +38,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     .map(email => email.trim().toLowerCase())
     .filter(email => email);
 
-  if (!toEmails || toEmails.length === 0) {
+  if (toEmails.length === 0) {
     console.error('RESEND_TO_EMAIL is not configured in .env or is empty.');
     return {
       message: 'Ocurrió un error de configuración en el servidor.',
