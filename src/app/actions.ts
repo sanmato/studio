@@ -58,7 +58,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
                 <li style="margin-bottom: 15px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #007bff; text-decoration: none;">${email}</a></li>
                 <li style="margin-bottom: 15px;"><strong>Empresa:</strong> ${company}</li>
               </ul>
-              <h3 style="color: #1C3F5E; font-family: 'Poppins', sans-serif; border-bottom: 2px solid #e0e_0; padding-bottom: 10px; margin-top: 30px; margin-bottom: 20px;">Mensaje</h3>
+              <h3 style="color: #1C3F5E; font-family: 'Poppins', sans-serif; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 30px; margin-bottom: 20px;">Mensaje</h3>
               <div style="background-color: #f9f9f9; border-left: 4px solid #007bff; padding: 15px; border-radius: 4px;">
                 <p style="margin: 0; white-space: pre-wrap;">${message}</p>
               </div>
