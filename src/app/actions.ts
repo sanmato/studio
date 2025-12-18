@@ -4,10 +4,10 @@ import * as z from 'zod';
 import { Resend } from 'resend';
 
 const formSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  company: z.string(),
-  message: z.string(),
+  name: z.string().min(2, "El nombre es requerido."),
+  email: z.string().email("El email no es válido."),
+  company: z.string().min(2, "La empresa es requerida."),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres."),
 });
 
 export async function submitContactForm(prevState: any, formData: FormData) {
@@ -19,8 +19,9 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   });
 
   if (!validatedFields.success) {
+    const errorMessages = validatedFields.error.issues.map(issue => issue.message).join(' ');
     return {
-      message: 'Error de validación. Por favor, revise los campos.',
+      message: `Error de validación: ${errorMessages}`,
       success: false,
     };
   }
@@ -79,7 +80,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     }
 
     return {
-      message: '¡Formulario enviado con éxito!',
+      message: '¡Gracias por tu mensaje! Nos pondremos en contacto pronto.',
       success: true,
     };
   } catch (error) {
