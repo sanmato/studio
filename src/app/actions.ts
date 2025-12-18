@@ -29,8 +29,8 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   const toEmails = process.env.RESEND_TO_EMAIL
     ?.split(',')
-    .map(email => email.trim())
-    .filter(email => email); // Filtra cualquier valor vacío
+    .map(email => email.trim().toLowerCase()) // Convert to lowercase and trim
+    .filter(email => email);
 
   if (!toEmails || toEmails.length === 0) {
     console.error('RESEND_TO_EMAIL is not configured in .env or is empty.');
@@ -44,7 +44,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'merlo Contact Form <onboarding@resend.dev>',
+      from: '.merlo Contact Form <onboarding@resend.dev>',
       to: toEmails,
       subject: `Nuevo Mensaje de Contacto de ${name}`,
       html: `
