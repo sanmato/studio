@@ -72,7 +72,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     });
 
     if (error) {
-      console.error('Resend API error:', error);
+      console.error('Resend API error:', JSON.stringify(error, null, 2));
       return {
         message: 'Ocurrió un error al enviar el email.',
         success: false,
