@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { useToast } from '@/hooks/use-toast';
@@ -36,7 +36,11 @@ function SubmitButton() {
 export function ContactForm() {
   const { toast } = useToast();
   const [state, formAction] = useActionState(submitContactForm, initialState);
-  const formRef = useRef<HTMLFormElement>(null);
+  
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [company, setCompany] = useState('');
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     if (state.message) {
@@ -45,7 +49,11 @@ export function ContactForm() {
           title: "Mensaje Enviado",
           description: state.message,
         });
-        formRef.current?.reset();
+        // Reset controlled components
+        setName('');
+        setEmail('');
+        setCompany('');
+        setMessage('');
       } else {
         toast({
           title: "Error",
@@ -62,22 +70,52 @@ export function ContactForm() {
         <CardTitle className="text-3xl font-bold text-center">Contanos de tu marca</CardTitle>
       </CardHeader>
       <CardContent>
-        <form ref={formRef} action={formAction} className="space-y-6">
+        <form action={formAction} className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="name">Nombre</Label>
-            <Input id="name" name="name" placeholder="Tu nombre completo" required />
+            <Input 
+              id="name" 
+              name="name" 
+              placeholder="Tu nombre completo" 
+              required 
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" placeholder="tu@empresa.com" required />
+            <Input 
+              id="email" 
+              name="email" 
+              type="email" 
+              placeholder="tu@empresa.com" 
+              required 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="company">Empresa</Label>
-            <Input id="company" name="company" placeholder="Nombre de tu proyecto o marca" required />
+            <Input 
+              id="company" 
+              name="company" 
+              placeholder="Nombre de tu proyecto o marca" 
+              required 
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Tu Mensaje</Label>
-            <Textarea id="message" name="message" placeholder="¿Cuál es tu mayor desafío hoy?" className="min-h-[100px]" required />
+            <Textarea 
+              id="message" 
+              name="message" 
+              placeholder="¿Cuál es tu mayor desafío hoy?" 
+              className="min-h-[100px]" 
+              required 
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
           </div>
           <SubmitButton />
         </form>
