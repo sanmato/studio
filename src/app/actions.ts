@@ -10,6 +10,9 @@ const formSchema = z.object({
   message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres."),
 });
 
+// Helper to validate email format
+const emailSchema = z.string().email();
+
 export async function submitContactForm(prevState: any, formData: FormData) {
   const validatedFields = formSchema.safeParse({
     name: formData.get('name'),
@@ -20,6 +23,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
 
   if (!validatedFields.success) {
     const errorMessages = validatedFields.error.issues.map(issue => issue.message).join(' ');
+    console.error('Validation Error:', errorMessages);
     return {
       message: `Error de validación: ${errorMessages}`,
       success: false,
@@ -27,9 +31,11 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   }
   
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const toEmails = process.env.RESEND_TO_EMAIL
-    ?.split(',')
-    .map(email => email.trim().toLowerCase()) // Convert to lowercase and trim
+  
+  const toEmailsRaw = process.env.RESEND_TO_EMAIL || '';
+  const toEmails = toEmailsRaw
+    .split(',')
+    .map(email => email.trim().toLowerCase())
     .filter(email => email);
 
   if (!toEmails || toEmails.length === 0) {
@@ -39,6 +45,17 @@ export async function submitContactForm(prevState: any, formData: FormData) {
       success: false,
     };
   }
+
+  // Stricter validation for each email
+  const invalidEmails = toEmails.filter(email => !emailSchema.safeParse(email).success);
+  if (invalidEmails.length > 0) {
+    console.error('Invalid email address format in RESEND_TO_EMAIL:', invalidEmails);
+    return {
+      message: `El servidor encontró una dirección de correo no válida: ${invalidEmails.join(', ')}`,
+      success: false,
+    };
+  }
+
 
   const { name, email, company, message } = validatedFields.data;
 
@@ -75,6 +92,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     });
 
     if (error) {
+      // Enhanced error logging
       console.error('Resend API error:', JSON.stringify(error, null, 2));
       return {
         message: 'Ocurrió un error al enviar el email.',
@@ -87,7 +105,8 @@ export async function submitContactForm(prevState: any, formData: FormData) {
       success: true,
     };
   } catch (error) {
-    console.error('Error submitting form:', error);
+    // Enhanced error logging
+    console.error('Error submitting form:', JSON.stringify(error, null, 2));
     return {
       message: 'Ocurrió un error inesperado al enviar el formulario.',
       success: false,
